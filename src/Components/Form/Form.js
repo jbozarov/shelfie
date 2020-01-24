@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import devmtn from '../devmtn.png'; 
 
 export class Form extends Component {
     constructor(props) {
@@ -14,6 +15,12 @@ export class Form extends Component {
         }
         this.cancel = this.cancel.bind(this); 
     }
+
+
+    // componentDidUpdate () {
+    //     this.state.id ===0 && this.setState({id: 0, name: '', price: 0, imgurl: '', editToggle: false })
+    // }
+
 
     componentDidMount () {
         if (this.props.match.params.id) {
@@ -65,7 +72,7 @@ export class Form extends Component {
         const {name, price, imgurl, editToggle } = this.state; 
         return (
             <div id='form' >
-                <img src={imgurl} style={{height: '40px', width: '60px'}} />
+                <img src={imgurl} style={{height: '40px', width: '60px'}} alt='' />
                 <section>
                     <label> Image URL: </label>
                     <input name='imgurl' value={imgurl} onChange={e=>this.handleChange(e)} /> 
